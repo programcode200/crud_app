@@ -8,17 +8,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(cors(
-  {
-    origin: "https://crud-app-psi-navy.vercel.app/",
-    methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"], 
-  }
-))
+app.use(cors());
 
-app.options("*", cors()); // ✅ Allow all preflight requests
-
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+app.get('/api/enquiry', (req, res) => {
+  res.json({ message: "API is working!" });
 });
 
 
