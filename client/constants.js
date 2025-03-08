@@ -1,2 +1,2 @@
 // src/constants.js
-export const server_url = "http://localhost:8000/api/website/enquiry";
+export const server_url = "https://crud-app-ybsh.vercel.app/api/website/enquiry";
