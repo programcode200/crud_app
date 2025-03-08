@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: "https://crud-app-psi-navy.vercel.app",
+    origin: "https://crud-app-psi-navy.vercel.app/",
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"], 
   }
 ))
