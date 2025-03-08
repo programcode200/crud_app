@@ -22,9 +22,9 @@ mongoose
   .connect(process.env.DBURL)
   .then(() => {
     console.log("connected to db");
-    app.listen(8000, () => {
-      console.log("server is running");
-    });
+    // app.listen(8000, () => {
+    //   console.log("server is running");
+    // });
   })
   .catch((err) => {
     console.log(err);
