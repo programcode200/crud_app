@@ -10,11 +10,15 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({
-  origin: "https://crud-app-psi-navy.vercel.app", // 👈 Allow your frontend
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: "Content-Type", "Authorization"
-}));
+
+app.use(
+  cors({
+    origin: "https://crud-app-psi-navy.vercel.app",
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"], 
+    allowedHeaders: "Content-Type,Authorization", // ✅ Allowed headers
+  })
+);
 
 app.options("*", cors()); // ✅ Allow all preflight requests
 
