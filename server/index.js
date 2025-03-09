@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://crud-app-psi-navy.vercel.app", // 👈 Allow your frontend
+  origin: "https://crud-app-psi-navy.vercel.app/", // 👈 Allow your frontend
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
