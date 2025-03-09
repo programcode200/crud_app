@@ -30,7 +30,7 @@ const enquiryDelete = async (req, res) => {
   res.send({ status: 1, enquiry, message: "Enuiry deleted" });
 };
 
-const enuiryEdit = async (req, res) => {
+const enquiryEdit = async (req, res) => {
   let enId = req.params.id;
   let enquiry = await enquiryModel.findOne({ _id: enId });
   res.send({ status: 1, enquiry });
@@ -50,4 +50,4 @@ const enquiryUpdate = async (req, res) => {
   res.send({status:1, message: "successfull", updateRes});
 };
 
-export { enquiryInsert, enquiryList, enquiryDelete, enuiryEdit, enquiryUpdate };
+export { enquiryInsert, enquiryList, enquiryDelete, enquiryEdit, enquiryUpdate };
