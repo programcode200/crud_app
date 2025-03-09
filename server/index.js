@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import enquiryRoutes from "./App/Routes/web/enquiryRoute.js";
+import { DB_NAME } from "./constant.js";
 
 dotenv.config();
 const app = express();
@@ -16,10 +17,10 @@ app.get("/", (req, res) => {
 });
 
 // ✅ Correct API Route
-app.use("/api/website/enquiry", enquiryRoutes);
+app.use("/api/enquiry", enquiryRoutes);
 
 // ✅ Fix for Vercel (Remove app.listen)
-mongoose.connect(process.env.DBURL)
+mongoose.connect(`${process.env.DBURL}/${DB_NAME}`)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.log(err));
 
