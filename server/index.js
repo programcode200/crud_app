@@ -2,17 +2,15 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import enquiryRoutes from "./App/Routes/web/enquiryRoute.js";
-
 
 dotenv.config();
 const app = express();
 
-app.use(express.json());
+const allowedOrigins = "https://crud-app-psi-navy.vercel.app";
 
 app.use(
   cors({
-    origin: "https://crud-app-psi-navy.vercel.app/",
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type,Authorization", // ✅ Allowed headers
@@ -24,10 +22,14 @@ app.options("*", cors()); // ✅ Allow all preflight requests
 console.log("Routes loaded:");
 console.log(enquiryRoutes.stack.map((r) => r.route.path));
 
+app.use(express.json());
+
 // ✅ Test Route - Check if server is running
 app.get("/", (req, res) => {
   res.send("Server is running on Vercel!");
 });
+
+import enquiryRoutes from "./App/Routes/web/enquiryRoute.js";
 
 // ✅ Correct API Route
 app.use("/api", enquiryRoutes);
