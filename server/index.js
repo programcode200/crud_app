@@ -16,6 +16,9 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+app.options("*", cors()); // ✅ Allow all preflight requests
+
+
 
 // ✅ Test Route - Check if server is running
 app.get("/", (req, res) => {
