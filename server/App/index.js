@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Server is running on Vercel!");
 });
 
-import enquiryRoutes from "./App/Routes/web/enquiryRoute.js";
+import enquiryRoutes from "./Routes/web/enquiryRoute.js";
 
 // ✅ Correct API Route
 app.use("/api", enquiryRoutes);
