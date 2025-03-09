@@ -34,7 +34,7 @@ app.use("/api", enquiryRoutes);
 
 // ✅ Fix for Vercel (Remove app.listen)
 mongoose
-  .connect(`${process.env.DBURL}/`)
+  .connect(`${process.env.DBURL}/test`)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
