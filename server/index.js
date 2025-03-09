@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import enquiryRoutes from "./App/Routes/web/enquiryRoute.js";
-import { DB_NAME } from "./constant.js";
+
 
 dotenv.config();
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://crud-app-psi-navy.vercel.app",
+    origin: "https://crud-app-psi-navy.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type,Authorization", // ✅ Allowed headers
