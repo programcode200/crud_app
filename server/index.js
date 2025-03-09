@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 
 // ✅ Correct API Route
-app.use("/api/enquiry", enquiryRoutes);
+app.use("/api", enquiryRoutes);
 
 // ✅ Fix for Vercel (Remove app.listen)
 mongoose.connect(`${process.env.DBURL}/${DB_NAME}`)

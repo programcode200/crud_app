@@ -48,7 +48,7 @@ export default function Enquiry() {
     } else {
       //insert
       axios
-        .post("https://crud-app-ybsh.vercel.app/api/enquiry/insert", formData)
+        .post("https://crud-app-ybsh.vercel.app/api/insert", formData)
         .then((res) => {
           console.log(res);
           toast.success("Enquiry saved successfully");
@@ -65,7 +65,7 @@ export default function Enquiry() {
 
   const getEnquiry = () => {
     axios
-      .get("https://crud-app-ybsh.vercel.app/api/enquiry/view")
+      .get("https://crud-app-ybsh.vercel.app/api/view")
       .then((res) => {
         return res.data;
       })
