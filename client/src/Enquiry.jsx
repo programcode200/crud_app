@@ -48,7 +48,7 @@ export default function Enquiry() {
     } else {
       //insert
       axios
-        .post(`${server_url}/insert`, formData)
+        .post(`https://crud-app-ybsh.vercel.app/api/enquiry/insert`, formData)
         .then((res) => {
           console.log(res);
           toast.success("Enquiry saved successfully");
