@@ -30,7 +30,7 @@ export default function Enquiry() {
       //update
       axios
         .put(
-          `${server_url}/update/${formData._id}`,
+          `${import.meta.env.VITE_BACKEND_URL}/update/${formData._id}`,
           formData
         )
         .then((res) => {
@@ -48,7 +48,7 @@ export default function Enquiry() {
     } else {
       //insert
       axios
-        .post("https://crud-app-ybsh.vercel.app/api/insert", formData)
+        .post(`${import.meta.env.VITE_BACKEND_URL}/insert`, formData)
         .then((res) => {
           console.log(res);
           toast.success("Enquiry saved successfully");
@@ -65,7 +65,7 @@ export default function Enquiry() {
 
   const getEnquiry = () => {
     axios
-      .get("https://crud-app-ybsh.vercel.app/api/view")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/view`)
       .then((res) => {
         return res.data;
       })

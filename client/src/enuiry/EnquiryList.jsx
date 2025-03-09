@@ -16,7 +16,7 @@ export default function EnquiryList({ data, getEnquiry, Swal, setFormData }) {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`${server_url}/delete/${id}`)
+          .delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`)
           .then(() => {
             getEnquiry();
             toast.success("Enquiry deleted successfully");
@@ -32,7 +32,7 @@ export default function EnquiryList({ data, getEnquiry, Swal, setFormData }) {
   };
   const editData = (editId) => {
     axios
-      .get(`${server_url}/edit/${editId}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/edit/${editId}`)
       .then((res) => {
         console.log(res.data.enquiry);
         setFormData(res.data.enquiry);
